@@ -196,6 +196,10 @@ double **group_by(double **matrix, int *group_count, int row_count, int row_size
     unique=(double*) malloc(row_count*sizeof(double));
     
     for(x=0;x<row_count;++x){
+    unique[x]=-1000000;
+    }
+    
+    for(x=0;x<row_count;++x){
         for(condition=1,y=0;y<row_count;++y){
             if(unique[y]==matrix[x][group_column]){
                 condition=0;
